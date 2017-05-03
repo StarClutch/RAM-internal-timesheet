@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<!--<button (click)="moveCalendar('back')">Go back</button>
+<button (click)="moveCalendar('forward')">Go Forward</button>
+
+
+<div  *ngFor="let day of days" class='row'>
+  <label>{{day.month}} {{day.day}}</label>
+  <input type="time" placeholder="In">
+  <input type="time" placeholder="Out">
+</div>
+
+<div class="alert success">hello</div>-->
+
+    <app-header>Loading...</app-header>
+    <div class="container-fluid">
+      <div class="row">
+        <app-sidebar>Loading...</app-sidebar>
+
+                <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+
+                  <router-outlet></router-outlet>
+                </main>
+      </div>
+    </div>

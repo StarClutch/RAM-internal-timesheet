@@ -1,0 +1,3 @@
+export class DayLog {
+  constructor(public date: Day) {}
+}

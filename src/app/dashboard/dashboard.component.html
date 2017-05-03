@@ -1,0 +1,46 @@
+          <app-hours></app-hours>
+
+          <h2>Time sheet for 5-1-2017 / 5-15-2017</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Day</th>
+                  <th>Working</th>
+                  <th>Sick</th>
+                  <th>Vacation</th>
+                  <th>Personal</th>
+                  <th>Floating</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let day of days; let i = index;">
+                  <ng-container *ngIf="!day.closed">
+                    <app-time-modal [day]="day" #childModal></app-time-modal>
+                    <td><a (click)="childModal.showChildModal(day)">Open Details</a></td>
+                    <td><strong>{{day.dayName}}</strong> {{day.month}} {{day.day}} <a (click)="copyAbove(i)" *ngIf="i!=0">(copy above)</a> </td>
+                    <td>
+                      <input class='hourInput' type=number min=0 max=8 placeholder="0" value={{day.benefitHours.sick}} required
+                        #sick (change)="sickChange(sick.value,i)"/>
+                    </td>
+                    <td>
+                      <input class='hourInput' type=number min=0 max=8 placeholder="0" value={{day.benefitHours.vacation}} required 
+                      #vacation (change)="vacationChange(vacation.value,i)"/>
+                    </td>
+                    <td>
+                      <input class='hourInput' type=number min=0 max=8 placeholder="0" value={{day.benefitHours.personal}} required
+                        #personal (change)="personalChange(personal.value,i)"/>
+                    </td>
+                    <td>
+                      <input class='hourInput' type=number min=0 max=8 placeholder="0" value={{day.benefitHours.floating}} required
+                        #floating (change)="floatingChange(floating.value,i)"/>
+                    </td>
+                    <td >0</td>
+                  </ng-container>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
