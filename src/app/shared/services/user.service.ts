@@ -1,5 +1,5 @@
-import { BenefitHours } from './../benefitHours.model';
-import { Employee } from './../employee.model';
+import { BenefitHours } from '../models/benefitHours.model';
+import { Employee } from '../models/employee.model';
 import { EventEmitter } from '@angular/core';
 
 export class UserService{

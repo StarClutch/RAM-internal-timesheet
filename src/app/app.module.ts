@@ -1,6 +1,6 @@
-import { UserService } from './shared/user.service';
-import { Employee } from './employee.model';
-import { TimeSheetService } from './shared/timesheet.service';
+import { UserService } from './shared/services/user.service';
+import { Employee } from './shared/models/employee.model';
+import { TimeSheetService } from './shared/services/timesheet.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,8 +18,8 @@ import { TimeModalComponent } from './shared/time-modal/time-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PastTimeSheetsComponent } from './past-time-sheets/past-time-sheets.component';
 import { ManagerApproveTimeSheetsComponent } from './manager-approve-time-sheets/manager-approve-time-sheets.component';
-import { ManageOfficeHoursComponent } from './manage-office-hours/manage-office-hours.component';
-import { ManageEmployeeHoursComponent } from './manage-employee-hours/manage-employee-hours.component';
+import { ManageOfficeHoursComponent } from './manage/manage-office-hours/manage-office-hours.component';
+import { ManageEmployeeHoursComponent } from './manage/manage-employee-hours/manage-employee-hours.component';
 
 const appRoutes: Routes = [
   {path: '', component:DashboardComponent},

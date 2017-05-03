@@ -1,4 +1,4 @@
-import { Day } from './../../day.model';
+import { Day } from './../models/day.model';
 import { Component, OnInit,ViewChild, Input } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 

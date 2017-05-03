@@ -1,8 +1,8 @@
-import { UserService } from './../shared/user.service';
-import { TimeSheetService } from './../shared/timesheet.service';
+import { UserService } from './../shared/services/user.service';
+import { TimeSheetService } from './../shared/services/timesheet.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { TimeModalComponent } from './../shared/time-modal/time-modal.component';
-import { Day } from './../day.model';
+import { Day } from './../shared/models/day.model';
 import { Component, OnInit, ViewChild, ViewContainerRef, Input } from '@angular/core';
 
 
@@ -15,8 +15,6 @@ import { Component, OnInit, ViewChild, ViewContainerRef, Input } from '@angular/
 export class DashboardComponent implements OnInit {
     @ViewChild('childModal') public childModal:ModalDirective;
 
-
-
   days : Day[] = [];
   currentDay : number;
   currentMonth : number;
@@ -25,7 +23,6 @@ export class DashboardComponent implements OnInit {
   constructor(private viewContainerRef: ViewContainerRef,private timeSheetService:TimeSheetService,private userService:UserService)  { }
 
   ngOnInit(){
-    console.log(this.userService);
     this.currentYear=2017;
     this.currentMonth=4;
     this.currentDay=16;
@@ -34,7 +31,6 @@ export class DashboardComponent implements OnInit {
   }
 
   generateCalendar(){
-    console.log(this);
     var lastDay = 15;
     if(this.currentDay==16){
       lastDay=new Date(this.currentYear,this.currentMonth,0).getDate();

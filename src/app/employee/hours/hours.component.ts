@@ -1,4 +1,4 @@
-import { TimeSheetService } from './../../shared/timesheet.service';
+import { TimeSheetService } from './../../shared/services/timesheet.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,4 +1,4 @@
-import { BenefitHours } from './../benefitHours.model';
+import { BenefitHours } from '../models/benefitHours.model';
 import { EventEmitter } from '@angular/core';
 
 export class TimeSheetService{
